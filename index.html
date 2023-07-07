@@ -4,12 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Validator</title>
-  <!-- font awesome cdn -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Sign Up Today!</h1>
+    <!-- form -->
+    <form id="form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Full Name" required minlength="3" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="123456789" required pattern="[0-9]{9}">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="form-group">
+        <label for="website">Website URL</label>
+        <input type="url" id="website" placeholder="https://andrzejszlachta.github.io" required>
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input type="password" id="password1" placeholder="Create password (Min. 8 characters)" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="Please include 1 uppercase character, 1 lowercase character and 1 number.">
+      </div>
+      <div class="form-group">
+        <label for="password2">Confirm password</label>
+        <input type="password" id="password2" placeholder="Confirm password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <!-- validate message here -->
+    <div class="message-container">
+      <h3 id="message">Don't Hesitate!</h3>
+    </div>
+  </div>
   <!-- script -->
   <script src="script.js"></script>
 </body>
